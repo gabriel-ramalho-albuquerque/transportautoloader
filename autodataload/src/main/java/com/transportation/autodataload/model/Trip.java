@@ -36,4 +36,20 @@ public class Trip {
     private long pickupLocationId;
 
     private long dropoffLocationId;
+
+    @Override
+    public String toString() {
+        return "Trip{" +
+                "id=" + id +
+                ", vendorId=" + vendorId +
+                ", pickupDateTime=" + pickupDateTime +
+                ", dropoffDateTime=" + dropoffDateTime +
+                ", passengerCount=" + passengerCount +
+                ", tripDistance='" + tripDistance + '\'' +
+                ", rateCodeId=" + rateCodeId +
+                ", storeAndFwdFlag='" + storeAndFwdFlag + '\'' +
+                ", pickupLocationId=" + pickupLocationId +
+                ", dropoffLocationId=" + dropoffLocationId +
+                '}';
+    }
 }
