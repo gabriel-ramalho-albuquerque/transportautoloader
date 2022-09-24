@@ -1,8 +1,6 @@
 package com.transportation.autodataload.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +10,8 @@ import javax.persistence.Id;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class Location {
 
     @Id
@@ -20,38 +20,6 @@ public class Location {
     private String zone;
     @Column(name = "SERVICE_ZONE")
     private String serviceZone;
-
-    public long getId() {
-        return id;
-    }
-
-    public String getBorough() {
-        return borough;
-    }
-
-    public String getZone() {
-        return zone;
-    }
-
-    public String getServiceZone() {
-        return serviceZone;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public void setBorough(String borough) {
-        this.borough = borough;
-    }
-
-    public void setZone(String zone) {
-        this.zone = zone;
-    }
-
-    public void setServiceZone(String serviceZone) {
-        this.serviceZone = serviceZone;
-    }
 
     @Override
     public String toString() {
