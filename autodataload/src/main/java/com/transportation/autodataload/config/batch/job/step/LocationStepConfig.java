@@ -25,6 +25,7 @@ public class LocationStepConfig implements StepConfig{
 
     @Bean("LocationStep")
     @Primary
+    @Override
     public Step step() {
         return stepBuilderFactory.get("Location step").<Location, Location>chunk(30)
                 .reader(locationItemReader)

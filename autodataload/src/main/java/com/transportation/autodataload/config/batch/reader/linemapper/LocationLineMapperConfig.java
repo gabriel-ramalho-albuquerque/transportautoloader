@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 public class LocationLineMapperConfig implements LineMapperConfig<Location> {
 
     @Bean
+    @Override
     public LineMapper<Location> lineMapper() {
         DefaultLineMapper<Location> lineMapper = new DefaultLineMapper<>();
 
