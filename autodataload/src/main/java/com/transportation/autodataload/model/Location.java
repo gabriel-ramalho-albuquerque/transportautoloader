@@ -1,4 +1,4 @@
-package com.transportation.autodataload.entity;
+package com.transportation.autodataload.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

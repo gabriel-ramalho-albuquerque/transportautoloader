@@ -1,6 +1,6 @@
-package com.transportation.autodataload.config;
+package com.transportation.autodataload.config.batch.job;
 
-import com.transportation.autodataload.entity.Location;
+import com.transportation.autodataload.model.Location;
 import com.transportation.autodataload.repository.LocationRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.batch.core.Job;
@@ -23,7 +23,7 @@ import org.springframework.core.io.FileSystemResource;
 @EnableBatchProcessing
 @Primary
 @AllArgsConstructor
-public class BatchConfig {
+public class JobConfig {
 
     private JobBuilderFactory jobBuilderFactory;
 
