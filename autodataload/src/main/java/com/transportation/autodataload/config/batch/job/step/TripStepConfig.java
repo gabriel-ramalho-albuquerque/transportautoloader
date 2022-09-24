@@ -28,7 +28,7 @@ public class TripStepConfig implements StepConfig {
     @Bean("TripStep")
     @Override
     public Step step() {
-        return stepBuilderFactory.get("Trip step").<Trip, Trip>chunk(30)
+        return stepBuilderFactory.get("Trip step").<Trip, Trip>chunk(100)
                 .reader(tripItemReader)
                 .writer(tripItemWriter)
                 .build();
