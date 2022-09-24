@@ -21,7 +21,7 @@ public class TripLineMapperConfig implements LineMapperConfig<Trip> {
         lineTokenizer.setStrict(false);
         lineTokenizer.setNames("vendorId", "pickupDateTime", "dropoffDateTime", "passengerCount", "tripDistance", "rateCodeId", "storeAndfwdFlag", "pickupLocation", "dropoffLocation");
 
-        BeanWrapperFieldSetMapper<Trip> fieldSetMapper = new BeanWrapperFieldSetMapper<>();
+        BeanWrapperFieldSetMapperCustom<Trip> fieldSetMapper = new BeanWrapperFieldSetMapperCustom<>();
         fieldSetMapper.setTargetType(Trip.class);
 
         lineMapper.setLineTokenizer(lineTokenizer);
