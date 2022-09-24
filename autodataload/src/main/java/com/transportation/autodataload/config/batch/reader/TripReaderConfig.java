@@ -14,7 +14,7 @@ public class TripReaderConfig implements ReaderConfig<Trip> {
 
     private final LineMapper<Trip> tripLineMapper;
 
-    @Bean("TripCSVReader")
+    @Bean("TripReader")
     @Override
     public FlatFileItemReader<Trip> reader() {
         FlatFileItemReader<Trip> itemReader = new FlatFileItemReader<>();
