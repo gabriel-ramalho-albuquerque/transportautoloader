@@ -23,7 +23,7 @@ public class TripStepConfig implements StepConfig {
     private ItemWriter<Trip> tripItemWriter;
 
     @Autowired
-    private  @Qualifier("TripCSVReader") ItemReader<Trip> tripItemReader;
+    private  @Qualifier("TripReader") ItemReader<Trip> tripItemReader;
 
     @Bean("TripStep")
     @Override
