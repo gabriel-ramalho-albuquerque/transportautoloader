@@ -1,0 +1,31 @@
+package com.transportation.autodataload.config.batch.reader.linemapper;
+
+import com.transportation.autodataload.model.GreenTripDTO;
+import org.springframework.batch.item.file.LineMapper;
+import org.springframework.batch.item.file.mapping.DefaultLineMapper;
+import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class GreenTripLineMapperConfig implements LineMapperConfig<GreenTripDTO> {
+
+    @Bean("GreenTripLineMapper")
+    @Override
+    public LineMapper<GreenTripDTO> lineMapper() {
+        DefaultLineMapper<GreenTripDTO> lineMapper = new DefaultLineMapper<>();
+
+        DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer();
+        lineTokenizer.setDelimiter(",");
+        lineTokenizer.setStrict(false);
+        lineTokenizer.setNames("vendorId", "pickupDateTime", "dropoffDateTime", "passengerCount", "tripDistance", "rateCodeId", "storeAndfwdFlag", "pickupLocation", "dropoffLocation");
+
+        BeanWrapperFieldSetMapperCustom<GreenTripDTO> fieldSetMapper = new BeanWrapperFieldSetMapperCustom<>();
+        fieldSetMapper.setTargetType(GreenTripDTO.class);
+
+        lineMapper.setLineTokenizer(lineTokenizer);
+        lineMapper.setFieldSetMapper(fieldSetMapper);
+
+        return lineMapper;
+    }
+}
