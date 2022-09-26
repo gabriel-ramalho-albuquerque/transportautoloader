@@ -9,12 +9,13 @@ import org.springframework.batch.core.repository.JobExecutionAlreadyRunningExcep
 import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
 import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/jobs")
+@RequestMapping(path = "api/v1/dataLoader")
 public class JobController {
 
     @Autowired
@@ -23,8 +24,9 @@ public class JobController {
     @Autowired
     private Job job;
 
-    @PostMapping("/importLocations")
-    public void importCsvToDBJob() {
+    @PostMapping("/importCSVData")
+    @Scheduled(cron="0 * * * * *")
+    public void importCSVData() {
         JobParameters jobParameters = new JobParametersBuilder()
                 .addLong("startAt", System.currentTimeMillis()).toJobParameters();
 
