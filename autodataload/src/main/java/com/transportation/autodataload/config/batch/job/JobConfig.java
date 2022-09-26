@@ -33,13 +33,17 @@ public class JobConfig {
     private @Qualifier("LocationStep") Step locationStep;
 
     @Autowired
-    private @Qualifier("TripStep") Step tripStep;
+    private @Qualifier("YellowTripStep") Step yellowTripStep;
+
+    @Autowired
+    private @Qualifier("GreenTripStep") Step greenTripStep;
 
     @Bean
     public Job job() {
         return jobBuilderFactory.get("CSV autoload job")
                 .start(locationStep)
-                .next(tripStep)
+                .next(yellowTripStep)
+                .next(greenTripStep)
                 .build();
     }
 }
