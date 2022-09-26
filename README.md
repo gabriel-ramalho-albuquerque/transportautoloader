@@ -1,4 +1,4 @@
-# transpotautoloader
+# transportautoloader
 
 A Spring Boot project to read data from csv files to the database using Spring Batch framework.
 
@@ -13,6 +13,17 @@ The project has a migration file that will create the databases (src\main\resour
 A job will be created and will have a scheduler to read and save the data from the csv files every month.
 
 It has also an endpoint that can be used to start the job.
+
+Has also a Postman collection in the "postman" folder.
+
+### API docs
+
+http://localhost:9191/v3/api-docs
+
+### Swagger UI
+
+http://localhost:9191/swagger-ui/index.html
+
 ## API Documentation
 
 #### Start the job that will read and write the data from the csv files in the database
