@@ -1,7 +1,7 @@
 package com.transportation.autodataload.config.batch.job.step;
 
-import com.transportation.autodataload.config.batch.job.processor.YellowTripProcessor;
-import com.transportation.autodataload.model.YellowTripDTO;
+import com.transportation.autodataload.config.batch.job.processor.GreenTripProcessor;
+import com.transportation.autodataload.model.GreenTripDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
@@ -14,25 +14,24 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @AllArgsConstructor
-public class YellowTripStepConfig implements StepConfig {
+public class GreenTripStepConfig {
 
     private StepBuilderFactory stepBuilderFactory;
 
     @Autowired
-    private ItemWriter<YellowTripDTO> tripItemWriter;
+    private ItemWriter<GreenTripDTO> tripItemWriter;
 
     @Autowired
-    private  @Qualifier("YellowTripReader") ItemReader<YellowTripDTO> tripItemReader;
+    private  @Qualifier("GreenTripReader") ItemReader<GreenTripDTO> tripItemReader;
 
-    @Bean("YellowTripProcessor")
-    public YellowTripProcessor processor() {
-        return new YellowTripProcessor();
+    @Bean("GreenTripProcessor")
+    public GreenTripProcessor processor() {
+        return new GreenTripProcessor();
     }
 
-    @Bean("YellowTripStep")
-    @Override
+    @Bean("GreenTripStep")
     public Step step() {
-        return stepBuilderFactory.get("Yellow Trip step").<YellowTripDTO, YellowTripDTO>chunk(100)
+        return stepBuilderFactory.get("Green Trip step").<GreenTripDTO, GreenTripDTO>chunk(100)
                 .reader(tripItemReader)
                 .processor(processor())
                 .writer(tripItemWriter)
