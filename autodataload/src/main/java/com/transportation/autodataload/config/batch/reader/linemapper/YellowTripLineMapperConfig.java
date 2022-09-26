@@ -1,28 +1,27 @@
 package com.transportation.autodataload.config.batch.reader.linemapper;
 
-import com.transportation.autodataload.model.Trip;
+import com.transportation.autodataload.model.YellowTripDTO;
 import org.springframework.batch.item.file.LineMapper;
-import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.batch.item.file.mapping.DefaultLineMapper;
 import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class TripLineMapperConfig implements LineMapperConfig<Trip> {
+public class TripLineMapperConfig implements LineMapperConfig<YellowTripDTO> {
 
     @Bean("TripLineMapper")
     @Override
-    public LineMapper<Trip> lineMapper() {
-        DefaultLineMapper<Trip> lineMapper = new DefaultLineMapper<>();
+    public LineMapper<YellowTripDTO> lineMapper() {
+        DefaultLineMapper<YellowTripDTO> lineMapper = new DefaultLineMapper<>();
 
         DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer();
         lineTokenizer.setDelimiter(",");
         lineTokenizer.setStrict(false);
         lineTokenizer.setNames("vendorId", "pickupDateTime", "dropoffDateTime", "passengerCount", "tripDistance", "rateCodeId", "storeAndfwdFlag", "pickupLocation", "dropoffLocation");
 
-        BeanWrapperFieldSetMapperCustom<Trip> fieldSetMapper = new BeanWrapperFieldSetMapperCustom<>();
-        fieldSetMapper.setTargetType(Trip.class);
+        BeanWrapperFieldSetMapperCustom<YellowTripDTO> fieldSetMapper = new BeanWrapperFieldSetMapperCustom<>();
+        fieldSetMapper.setTargetType(YellowTripDTO.class);
 
         lineMapper.setLineTokenizer(lineTokenizer);
         lineMapper.setFieldSetMapper(fieldSetMapper);

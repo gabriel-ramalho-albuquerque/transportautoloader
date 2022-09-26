@@ -18,7 +18,7 @@ public class TripReaderConfig implements ReaderConfig<Trip> {
     @Override
     public FlatFileItemReader<Trip> reader() {
         FlatFileItemReader<Trip> itemReader = new FlatFileItemReader<>();
-        itemReader.setResource(new FileSystemResource("src/main/resources/yellow_tripdata_2018-01_01-15.csv"));
+        itemReader.setResource(new FileSystemResource("src/main/resources/csv/yellowTrip/yellow_tripdata_2018-01_01-15.csv"));
         itemReader.setName("Trip reader");
         itemReader.setLineMapper(tripLineMapper);
 

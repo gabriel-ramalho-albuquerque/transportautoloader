@@ -4,18 +4,17 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
+@Table(name = "TRIP")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Trip {
-
+public class YellowTripDTO {
     @Id
     @GeneratedValue(strategy = SEQUENCE, generator = "seqGen")
     @SequenceGenerator(name = "seqGen", sequenceName = "seq", initialValue = 1)
@@ -41,9 +40,11 @@ public class Trip {
 
     private long dropoffLocationId;
 
+    private long tripTypeId;
+
     @Override
     public String toString() {
-        return "Trip{" +
+        return "YellowTripDTO{" +
                 "id=" + id +
                 ", vendorId=" + vendorId +
                 ", pickupDateTime=" + pickupDateTime +
@@ -54,6 +55,7 @@ public class Trip {
                 ", storeAndFwdFlag='" + storeAndFwdFlag + '\'' +
                 ", pickupLocationId=" + pickupLocationId +
                 ", dropoffLocationId=" + dropoffLocationId +
+                ", tripTypeId=" + tripTypeId +
                 '}';
     }
 }
