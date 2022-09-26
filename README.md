@@ -16,6 +16,10 @@ It has also an endpoint that can be used to start the job.
 
 Has also a Postman collection in the "postman" folder.
 
+### Database relationships diagram
+
+![Alt text](https://raw.githubusercontent.com/gabriel-ramalho-albuquerque/transportautoloader/main/docs/database_relationship_diagrams.PNG?sanitize=true)
+
 ### API docs
 
 http://localhost:9191/v3/api-docs
@@ -37,5 +41,6 @@ http://localhost:9191/swagger-ui/index.html
 - Change the file path to external path
 - Change the file name to be dynamic
 - Try to refactor the trip type code (green and yellow) without affecting the job functionality
+- Create tables to handle the borough and service zone data to remove duplicate data in the location table
 - Add performance tests
 - Docker
