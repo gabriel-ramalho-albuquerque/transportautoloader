@@ -1,0 +1,32 @@
+{
+	"info": {
+		"_postman_id": "9042fc1c-b5a9-4bca-b3e6-555dd088cc96",
+		"name": "transpotautoloader",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6124144"
+	},
+	"item": [
+		{
+			"name": "importCSVData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/api/v1/dataLoader/importCSVData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"v1",
+						"dataLoader",
+						"importCSVData"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
