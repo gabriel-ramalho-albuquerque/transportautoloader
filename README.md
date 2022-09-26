@@ -18,11 +18,11 @@ Has also a Postman collection in the "postman" folder.
 
 ### API docs
 
-http://localhost:8181/v3/api-docs
+http://localhost:9191/v3/api-docs
 
 ### Swagger UI
 
-http://localhost:8181/swagger-ui/index.html
+http://localhost:9191/swagger-ui/index.html
 
 ## API Documentation
 
