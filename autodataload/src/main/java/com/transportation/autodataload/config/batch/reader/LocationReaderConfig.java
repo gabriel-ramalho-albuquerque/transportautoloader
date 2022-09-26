@@ -17,7 +17,7 @@ public class LocationReaderConfig implements ReaderConfig<Location> {
     @Override
     public FlatFileItemReader<Location> reader() {
         FlatFileItemReader<Location> itemReader = new FlatFileItemReader<>();
-        itemReader.setResource(new FileSystemResource("src/main/resources/zones.csv"));
+        itemReader.setResource(new FileSystemResource("src/main/resources/csv/zone/zones.csv"));
         itemReader.setName("Location reader");
         itemReader.setLinesToSkip(1);
         itemReader.setLineMapper(locationLineMapper);
