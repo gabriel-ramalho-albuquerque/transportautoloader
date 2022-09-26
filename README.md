@@ -1,4 +1,4 @@
-# transpotautoloader
+# transportautoloader
 
 A Spring Boot project to read data from csv files to the database using Spring Batch framework.
 
